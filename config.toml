@@ -1,14 +1,14 @@
 
 # Edit me. Everything the tidier knows about YOUR filing habits lives here.
-watch_dir = "C:/Users/HP/Desktop/test-files"
-dest_root = "C:/Users/HP/Desktop/Tidy"
+watch_dir = "~/Downloads"
+dest_root = "~/Tidy"
 
 
 # Any model you've pulled with `ollama pull`. Swap it with one line.
 model = "gemma3:1b"          # try "gemma3:4b" for lower RAM, or "llama3.2:3b"
 ollama_url = "http://localhost:11434"
 
-settle_seconds = 0            # ignore files modified in the last minute (still downloading)
+settle_seconds = 60            # ignore files modified in the last minute (still downloading)
 watch_interval_seconds = 120   # how often `watch` rescans
 max_chars = 2000               # how much of each file the model gets to read
 

@@ -1,0 +1,53 @@
+
+# Edit me. Everything the tidier knows about YOUR filing habits lives here.
+watch_dir = "C:/Users/HP/Desktop/test-files"
+dest_root = "C:/Users/HP/Desktop/Tidy"
+
+
+# Any model you've pulled with `ollama pull`. Swap it with one line.
+model = "gemma3:1b"          # try "gemma3:4b" for lower RAM, or "llama3.2:3b"
+ollama_url = "http://localhost:11434"
+
+settle_seconds = 0            # ignore files modified in the last minute (still downloading)
+watch_interval_seconds = 120   # how often `watch` rescans
+max_chars = 2000               # how much of each file the model gets to read
+
+# Files matching these names are never touched (Office lock files, Windows junk, shortcuts).
+ignore_patterns = ["~$*", "desktop.ini", "Thumbs.db", "*.lnk"]
+
+# The model must pick one of these. Descriptions are the "rules": write them your way.
+[[categories]]
+name = "Finance"
+description = "invoices, receipts, bank statements, tax forms, payslips"
+[[categories]]
+name = "Work"
+description = "reports, presentations, meeting notes, project documents"
+[[categories]]
+name = "School"
+description = "lecture notes, assignments, papers, course material"
+[[categories]]
+name = "Travel"
+description = "tickets, boarding passes, bookings, itineraries, visas"
+[[categories]]
+name = "Code"
+description = "source files, scripts, config, datasets, logs"
+[[categories]]
+name = "Media"
+description = "images, screenshots, audio, video, design assets"
+[[categories]]
+name = "Manuals"
+description = "user guides, datasheets, warranties, product documentation"
+
+# YOUR RULES: matched against the filename (case-insensitive, * wildcard). First match wins
+# and overrides the model's category. Uncomment/edit these to change the plan.
+
+[[rules]]
+match = "*.ppt*"
+category = "School"
+
+[[rules]]
+match = "quiz*"
+category = "School"
+[[categories]]
+name = "School"
+description = "lecture slides, quizzes, assignments, papers, course material, university work"

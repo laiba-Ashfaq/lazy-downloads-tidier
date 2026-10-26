@@ -45,3 +45,6 @@ Your filing habits live in `config.toml`. Category descriptions are the prompt, 
 ## Ideas for next steps
 
 Vision model for screenshots/photos (e.g. `qwen2.5vl`), OCR for scanned PDFs, a systemd/launchd service for `watch`.
+
+## Live Demo
+https://youtu.be/FEO2OEQcy2U
